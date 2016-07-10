@@ -21,6 +21,7 @@ alias mv='mv -v'
 alias rm='rm -i -v'
 alias cp='cp -v'
 
+alias hst="open -a Hearthstone"
 ############################################
 #  Navigation - Search & Display
 ############################################
@@ -108,6 +109,18 @@ function gitsearch(){
 }
 
 ##############################
+# Firebase
+##############################
+
+alias fs="firebase serve"
+alias fu="firebase use"
+alias fo="firebase open"
+alias fd="firebase deploy"
+alias fl="firebase login"
+alias fin="firebase init"
+alias fup="npm i -g firebase-tools"
+
+##############################
 #  Other Aliases
 ##############################
 
@@ -177,4 +190,13 @@ function localip(){
 		sed -r "s/Device: (en.*)$/_localip \1/e" | \
 		sed -r "s/Ethernet Address:/📘 /g" | \
 		sed -r "s/(VLAN Configurations)|==*//g"
+}
+
+
+function pow() {
+  local path=$(pwd)
+  local dir=${path##*/} # http://stackoverflow.com/questions/3162385/how-to-split-a-string-in-shell-and-get-the-last-field
+  cd ~/.pow
+  ln -s $path
+  open "http://$dir.dev"
 }

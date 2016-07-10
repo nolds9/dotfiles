@@ -524,11 +524,11 @@ if [ $ITERM_SESSION_ID ]; then
   export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
 fi
 
-export GITHUB_USERNAME='tylercrosse'
+export GITHUB_USERNAME='nolds9'
 export PATH="/usr/local/bin:$PATH"
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
-export NVM_DIR="/Users/tcrosse/.nvm"
+export NVM_DIR="/Users/nho/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Setting PATH for Python 3.5

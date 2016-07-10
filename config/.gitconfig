@@ -88,10 +88,10 @@
 
 [core]
 	editor = atom --wait
-	excludesfile = /Users/tcrosse/.gitignore_global
+	excludesfile = /Users/nho/.gitignore_global
 [user]
-	name = Tyler Crosse
-	email = tylerscottcrosse@gmail.com
+	name = Nick Olds
+	email = nolds9@yahoo.com
 [filter "lfs"]
 	smudge = git-lfs smudge %f
 	required = true

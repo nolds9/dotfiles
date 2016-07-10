@@ -290,8 +290,9 @@ set_prompts() {
 
   # Define the sexy-bash-prompt
   PS1="\[$sbp_yellow\]\u\[$sbp_reset\]"
-  PS1+="\[$white\] at \[$sbp_reset\]"
-  PS1+="\[$sbp_green\]\h\[$sbp_reset\]"
+  # Comment if you want source
+  # PS1+="\[$white\] at \[$sbp_reset\]"
+  # PS1+="\[$sbp_green\]\h\[$sbp_reset\]"
   PS1+="\[$white\] in \[$sbp_reset\]"
   PS1+="\[$sbp_cyan\]\w\[$sbp_reset\]"
   PS1+="\$( is_on_git && \
