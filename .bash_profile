@@ -527,7 +527,6 @@ fi
 export GITHUB_USERNAME='nolds9'
 export PATH="/usr/local/bin:$PATH"
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
-
 export NVM_DIR="/Users/nho/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
