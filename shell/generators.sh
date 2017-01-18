@@ -1,5 +1,23 @@
+# bin/env/node
+function ramda () {
+  touch index.html styles.css script.js
+  echo "<html>
+<head>
+  <title>Team Ramrod</title>
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+  <link rel=\"stylesheet\" href=\"styles.css\">
+</head>
+<body>
+  <div id='app'></div>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/ramda/0.22.1/ramda.min.js'></script>
+  <script src='script.js'></script>
+</body>
+</html>" >> index.html
+}
+
 function ng2 () {
   touch index.html
+  touch styles.css
   echo "<html>
 <head>
   <title>Angular 2 QuickStart JS</title>

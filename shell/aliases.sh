@@ -21,6 +21,7 @@ alias mv='mv -v'
 alias rm='rm -i -v'
 alias cp='cp -v'
 
+alias note="open -a Typora"
 alias hst="open -a Hearthstone"
 ############################################
 #  Navigation - Search & Display
@@ -108,6 +109,19 @@ function gitsearch(){
   git rev-list --all | xargs git grep -i $1
 }
 
+function gh(){
+  giturl=$(git config --get remote.origin.url)
+  if [ "$giturl" == "" ]
+    then
+     echo "Not a git repository or no remote.origin.url set"
+     exit 1;
+  fi
+
+  giturl=${giturl/git\@github\.com\:/https://github.com/}
+  giturl=${giturl/\.git}
+  open $giturl
+}
+
 ##############################
 # Firebase
 ##############################
@@ -133,9 +147,9 @@ alias rspecf="rspec -c -fd"
 alias chro="open -a 'Google Chrome'"
 alias a="atom"
 
-alias oops='$(thefuck $(fc -ln -1))'
+# alias oops='$(thefuck $(fc -ln -1))'
 
-alias w='ansiweather'
+# alias w='ansiweather'
 
 ##############################
 #  Network Aliases
@@ -181,16 +195,16 @@ function whois() {
 	/usr/bin/whois -h whois.internic.net $domain | sed '/NOTICE:/q'
 }
 
-function localip(){
-	function _localip(){ echo "📶  "$(ipconfig getifaddr "$1"); }
-	export -f _localip
-	local purple="\x1B\[35m" reset="\x1B\[m"
-	networksetup -listallhardwareports | \
-		sed -r "s/Hardware Port: (.*)/${purple}\1${reset}/g" | \
-		sed -r "s/Device: (en.*)$/_localip \1/e" | \
-		sed -r "s/Ethernet Address:/📘 /g" | \
-		sed -r "s/(VLAN Configurations)|==*//g"
-}
+# function localip(){
+# 	function _localip(){ echo "📶  "$(ipconfig getifaddr "$1"); }
+# 	export -f _localip
+# 	local purple="\x1B\[35m" reset="\x1B\[m"
+# 	networksetup -listallhardwareports | \
+# 		sed -r "s/Hardware Port: (.*)/${purple}\1${reset}/g" | \
+# 		sed -r "s/Device: (en.*)$/_localip \1/e" | \
+# 		sed -r "s/Ethernet Address:/📘 /g" | \
+# 		sed -r "s/(VLAN Configurations)|==*//g"
+# }
 
 
 function pow() {
