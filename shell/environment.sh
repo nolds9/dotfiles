@@ -33,22 +33,22 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 source ~/dev/dotfiles/z.sh
 
 # bash completion.
-if  which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-    source "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-    source /etc/bash_completion;
-fi;
+# if  which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+#     source "$(brew --prefix)/share/bash-completion/bash_completion";
+# elif [ -f /etc/bash_completion ]; then
+#     source /etc/bash_completion;
+# fi;
 
 # homebrew completion
 # https://github.com/Homebrew/legacy-homebrew/blob/4251efa88cc6cc3e937dd2d97cbf745a348d09e8/Library/Contributions/brew_bash_completion.sh
-if  which brew > /dev/null; then
-    source `brew --repository`/Library/Contributions/brew_bash_completion.sh
-fi;
-
-# hub completion
-if  which hub > /dev/null; then
-    source "$(brew --prefix)/etc/bash_completion.d/hub.bash_completion.sh";
-fi;
+# if  which brew > /dev/null; then
+#     source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+# fi;
+#
+# # hub completion
+# if  which hub > /dev/null; then
+#     source "$(brew --prefix)/etc/bash_completion.d/hub.bash_completion.sh";
+# fi;
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
@@ -70,19 +70,19 @@ fi
 
 export GITHUB_USERNAME='nolds9'
 export PATH="/usr/local/bin:$PATH"
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+# export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Devel
 # source /usr/local/bin/virtualenvwrapper.sh
 
 # Setting PATH for Python 3.5
 # The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-export PATH
+# PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
+# export PATH
 
-export NVM_DIR="/Users/nho/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# export NVM_DIR="/Users/nho/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#
+#
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
