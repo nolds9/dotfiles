@@ -80,7 +80,7 @@ function la(){
 ##############################
 
 alias g="git"
-
+alias gd="git diff"
 alias gba="git branch -a"
 alias gcb="git checkout -b"
 
