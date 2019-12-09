@@ -13,7 +13,7 @@ fi
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/shell/.{path,bash_prompt,exports,aliases,functions,extra}.sh; do
+for file in ~/dotfiles/shell/{path,bash_prompt,exports,aliases,functions,extra}.sh; do
   echo "$file"
   [ -r "$file" ] && source "$file"
 done
