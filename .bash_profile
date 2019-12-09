@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 
-source ~/dev/dotfiles/shell/bash_prompt.sh
-source ~/dev/dotfiles/shell/aliases.sh
-source ~/dev/dotfiles/shell/environment.sh
-source ~/dev/dotfiles/shell/generators.sh
-export GITHUB_USERNAME='nolds9'
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:/usr/local/src/rust/bin
-export RUST_SRC_PATH=/usr/local/src/rustc-1.9.0/src
-export GH_PERSONAL_TOKEN="6873b971f7890e12e1310aecc0d72424bfd9b914"
-export PATH=$PATH:/usr/local/m-cli
-export PATH=$PATH:/Applications/Atom\ Beta.app
-# added by Anaconda2 4.1.1 installer
-export PATH="//anaconda/bin:$PATH"
+# Add Homebrew `/usr/local/bin` and User `~/bin` to the `$PATH`
+PATH=/usr/local/bin:$PATH
+PATH=$HOME/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Enable git tab completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/dotfiles/shell/{path,bash_prompt,exports,aliases,functions,extra}.sh; do
+  echo "$file"
+  [ -r "$file" ] && source "$file"
+done
+
+
